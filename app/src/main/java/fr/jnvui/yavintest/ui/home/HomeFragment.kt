@@ -13,6 +13,7 @@ import fr.jnvui.yavintest.ui.adapters.TicketAdapter
 import fr.jnvui.yavintest.usecases.TicketUseCase
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.inject
+import org.jetbrains.anko.doAsync
 
 class HomeFragment : Fragment() {
 
@@ -34,7 +35,7 @@ class HomeFragment : Fragment() {
             val llm = LinearLayoutManager(this.requireContext())
             llm.orientation = LinearLayoutManager.VERTICAL
             ticketsRecyclerView.layoutManager = llm
-            ticketsRecyclerView.adapter = TicketAdapter(it)
+            ticketsRecyclerView.adapter = TicketAdapter(it.toTypedArray())
         })
 
         return inflater.inflate(R.layout.fragment_home, container, false)
