@@ -1,11 +1,11 @@
 package fr.jnvui.yavintest
 
 import android.app.Application
+import android.text.Editable
 import fr.jnvui.yavintest.dao.TicketsDAO
 import fr.jnvui.yavintest.models.Ticket
 import fr.jnvui.yavintest.module.appModule
 import fr.jnvui.yavintest.module.databaseModule
-import fr.jnvui.yavintest.usecases.TicketUseCase
 import org.jetbrains.anko.doAsync
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
@@ -25,7 +25,7 @@ class MyApplication : Application() {
         }
 
         //initial data on database
-         val dao: TicketsDAO by inject()
+        val dao: TicketsDAO by inject()
         //TODO create db file
         doAsync {
             dao.insertAll(Ticket("1", "Single Journey ticket", "1,60£"))
@@ -33,4 +33,7 @@ class MyApplication : Application() {
             dao.insertAll(Ticket("3", "One week ticket", "47,90£"))
         }
     }
+
+    fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
+
 }

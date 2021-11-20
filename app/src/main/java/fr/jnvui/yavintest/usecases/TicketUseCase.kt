@@ -11,4 +11,7 @@ class TicketUseCase(private val ticketDao: TicketsDAO) {
         return ticketDao.getAll()
     }
 
+    fun updateTicketPrice(ticket: Ticket) {
+        ticketDao.update(ticket)
+    }
 }
