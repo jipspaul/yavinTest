@@ -4,14 +4,15 @@ import android.app.Application
 import androidx.room.Room
 import fr.jnvui.yavintest.dao.AppDatabase
 import fr.jnvui.yavintest.dao.TicketsDAO
-import fr.jnvui.yavintest.ui.home.HomeViewModel
 import fr.jnvui.yavintest.usecases.TicketUseCase
+import fr.jnvui.yavintest.usecases.TransactionsUseCase
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
 val appModule = module {
 
     single { TicketUseCase(get()) }
+    single { TransactionsUseCase() }
 }
 
 val databaseModule = module {
