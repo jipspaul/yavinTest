@@ -11,6 +11,10 @@ class TicketUseCase(private val ticketDao: TicketsDAO) {
         return ticketDao.getAll()
     }
 
+    fun getTicketById(id: String): LiveData<Ticket> {
+        return ticketDao.loadSingle(id)
+    }
+
     fun updateTicketPrice(ticket: Ticket) {
         ticketDao.update(ticket)
     }

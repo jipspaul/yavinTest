@@ -13,6 +13,7 @@ import fr.jnvui.yavintest.R
 import fr.jnvui.yavintest.ui.adapters.AdapterClickListener
 import fr.jnvui.yavintest.ui.adapters.TicketAdapter
 import fr.jnvui.yavintest.ui.payment.PaymentActivity
+import fr.jnvui.yavintest.ui.payment.PaymentFragment.Companion.TICKET_ID_INTENT_EXTRA
 import fr.jnvui.yavintest.usecases.TicketUseCase
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.inject
@@ -41,7 +42,7 @@ class HomeFragment : Fragment() {
                 AdapterClickListener {
                     //Start activity
                     val intent = Intent(this.context, PaymentActivity::class.java)
-                    intent.putExtra("ticketId", it.id)
+                    intent.putExtra(TICKET_ID_INTENT_EXTRA, it.id)
                     startActivity(intent)
                 })
         })
