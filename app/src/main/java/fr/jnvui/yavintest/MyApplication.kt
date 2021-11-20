@@ -2,6 +2,7 @@ package fr.jnvui.yavintest
 
 import android.app.Application
 import android.text.Editable
+import android.view.View
 import fr.jnvui.yavintest.dao.TicketsDAO
 import fr.jnvui.yavintest.models.Ticket
 import fr.jnvui.yavintest.module.appModule
@@ -28,12 +29,18 @@ class MyApplication : Application() {
         val dao: TicketsDAO by inject()
         //TODO create db file
         doAsync {
-            dao.insertAll(Ticket("1", "Single Journey ticket", "1,60£"))
-            dao.insertAll(Ticket("2", "One day ticket", "12,40£"))
-            dao.insertAll(Ticket("3", "One week ticket", "47,90£"))
+            dao.insertAll(Ticket("1", "Single Journey ticket", "1,60£",0))
+            dao.insertAll(Ticket("2", "One day ticket", "12,40£",0))
+            dao.insertAll(Ticket("3", "One week ticket", "47,90£",0))
         }
     }
 
-    fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
+    fun View.hide() {
+        this.visibility = View.GONE
+    }
+
+    fun View.show() {
+        this.visibility = View.VISIBLE
+    }
 
 }

@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import fr.jnvui.yavintest.R
@@ -93,8 +94,18 @@ class PaymentFragment : Fragment() {
             }
         }
         intent.putExtra("receiptTicket", receiptTicket)
-        startActivityForResult(intent, 1111)
+        getResult.launch(intent)
+
     }
+
+    val getResult =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
+            if (it.resultCode == 1111) {
+                Log.d("TEST", "Success")
+            }
+        }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         super.onActivityResult(requestCode, resultCode, intent)

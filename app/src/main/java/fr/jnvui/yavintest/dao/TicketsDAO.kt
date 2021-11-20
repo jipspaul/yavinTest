@@ -18,7 +18,7 @@ interface TicketsDAO {
     @Query("SELECT * FROM ticket")
     fun getAll(): LiveData<List<Ticket>>
 
-    @Query("SELECT ticket_price, ticket_type,id FROM ticket WHERE id = :ticketId LIMIT 1")
+    @Query("SELECT ticket_price, ticket_type,id,ticket_counter FROM ticket WHERE id = :ticketId LIMIT 1")
     fun loadSingle(ticketId: String): LiveData<Ticket>
 
 }

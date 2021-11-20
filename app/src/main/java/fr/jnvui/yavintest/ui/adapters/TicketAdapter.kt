@@ -3,6 +3,7 @@ package fr.jnvui.yavintest.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -19,12 +20,16 @@ class TicketAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val ticketType: TextView
         val ticketPrice: TextView
+        val ticketCartCounter: TextView
+        val deleteButton: ImageView
         val ticketPriceItem: ConstraintLayout
 
         init {
             ticketType = view.findViewById(R.id.ticketTypeTextView)
             ticketPrice = view.findViewById(R.id.dayTicketPriceTextView)
             ticketPriceItem = view.findViewById(R.id.ticketPriceItem)
+            ticketCartCounter = view.findViewById(R.id.ticketCounter)
+            deleteButton = view.findViewById(R.id.removeItemButton)
         }
     }
 
@@ -42,6 +47,25 @@ class TicketAdapter(
         viewHolder.ticketPriceItem.setOnClickListener {
             onClickListener.onClick(dataSet[position])
         }
+
+        viewHolder.deleteButton.setOnClickListener {
+            onClickListener.onClickCounterDelete(dataSet[position])
+        }
+
+        //show counter only when its different > 0
+        if (dataSet[position].ticketCartCounter > 0) {
+
+            viewHolder.deleteButton.visibility = View.VISIBLE
+            viewHolder.ticketCartCounter.visibility = View.VISIBLE
+            viewHolder.ticketCartCounter.text = dataSet[position].ticketCartCounter.toString()
+
+        } else {
+
+            viewHolder.deleteButton.visibility = View.INVISIBLE
+            viewHolder.ticketCartCounter.visibility = View.INVISIBLE
+
+        }
+
     }
 
     override fun getItemCount() = dataSet.size

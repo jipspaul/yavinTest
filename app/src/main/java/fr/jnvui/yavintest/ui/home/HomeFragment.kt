@@ -39,10 +39,17 @@ class HomeFragment : Fragment() {
             val llm = LinearLayoutManager(this.requireContext())
             llm.orientation = LinearLayoutManager.VERTICAL
             ticketsRecyclerView.layoutManager = llm
-            ticketsRecyclerView.adapter = TicketAdapter(it.toTypedArray(),
-                AdapterClickListener {
-                    homeViewModel.addTicketToCart(it)
-                })
+            ticketsRecyclerView.adapter = TicketAdapter(
+                it.toTypedArray(),
+                AdapterClickListener(
+                    {
+                        homeViewModel.addTicketToCart(it)
+                        homeViewModel.updateTicket(it)
+                    },
+                    {
+                        homeViewModel.removeTicketFromCart(it)
+                    })
+            )
         })
 
         homeViewModel.ticketsCart.observe(viewLifecycleOwner, Observer {
@@ -56,8 +63,8 @@ class HomeFragment : Fragment() {
 
         cartIcon.setOnClickListener {
             //Start activity
-            val intent = Intent(this.context, CartActivity::class.java)
-            intent.putExtra(TICKET_ID_INTENT_EXTRA, it.id)
+            val intent = Intent(this.context, PaymentActivity::class.java)
+            intent.putExtra(TICKET_ID_INTENT_EXTRA, "1")
             startActivity(intent)
         }
     }

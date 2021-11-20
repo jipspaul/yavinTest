@@ -38,11 +38,16 @@ class SettingsFragment : Fragment() {
             llm.orientation = LinearLayoutManager.VERTICAL
             ticketsSettingsRecyclerView.layoutManager = llm
             ticketsSettingsRecyclerView.adapter = TicketSettingsAdapter(it.toTypedArray(),
-                AdapterClickListener {
+                AdapterClickListener ({
                     settingsViewModel.updateTicketPrice(it)
                     //close keyboard
                     closeKeyboard(this.requireActivity())
-                }
+                },
+                    {
+                        settingsViewModel.updateTicketPrice(it)
+                        //close keyboard
+                        closeKeyboard(this.requireActivity())
+                    })
             )
         })
 
