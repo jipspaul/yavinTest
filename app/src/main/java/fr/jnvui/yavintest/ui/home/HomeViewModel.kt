@@ -1,6 +1,7 @@
 package fr.jnvui.yavintest.ui.home
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import fr.jnvui.yavintest.models.Ticket
@@ -12,6 +13,15 @@ class HomeViewModel(private val ticketUseCase: TicketUseCase) :
     private val _tickets = ticketUseCase.getTickets()
     val tickets: LiveData<List<Ticket>> = _tickets
 
+    private val _ticketsCart = MutableLiveData<List<Ticket>>()
+    val ticketsCart: LiveData<List<Ticket>> = _ticketsCart
+
+    private val cartList : ArrayList<Ticket> = arrayListOf()
+
+    fun addTicketToCart(ticket: Ticket) {
+        cartList.add(ticket)
+        _ticketsCart.value = cartList
+    }
 }
 
 class HomeViewModelFactory(

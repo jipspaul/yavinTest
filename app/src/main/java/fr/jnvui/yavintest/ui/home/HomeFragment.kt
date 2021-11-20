@@ -40,14 +40,24 @@ class HomeFragment : Fragment() {
             ticketsRecyclerView.layoutManager = llm
             ticketsRecyclerView.adapter = TicketAdapter(it.toTypedArray(),
                 AdapterClickListener {
-                    //Start activity
-                    val intent = Intent(this.context, PaymentActivity::class.java)
-                    intent.putExtra(TICKET_ID_INTENT_EXTRA, it.id)
-                    startActivity(intent)
+                    homeViewModel.addTicketToCart(it)
                 })
         })
 
+        homeViewModel.ticketsCart.observe(viewLifecycleOwner, Observer {
+            cartCountTextView.text = it.size.toString()
+        })
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        cartIcon.setOnClickListener {
+            //Start activity
+            val intent = Intent(this.context, PaymentActivity::class.java)
+            intent.putExtra(TICKET_ID_INTENT_EXTRA, it.id)
+            startActivity(intent)
+        }
+    }
 }
