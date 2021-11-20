@@ -34,8 +34,12 @@ class TransactionsAdapter(
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.transactionDate.text = dataSet[position].date
-        (dataSet[position].amount.toString() + " " + dataSet[position].currency).also { viewHolder.transactionPrice.text = it }
+        (dataSet[position].date + ", " + dataSet[position].time).also {
+            viewHolder.transactionDate.text = it
+        }
+        (dataSet[position].amount.toString() + " " + dataSet[position].currency).also {
+            viewHolder.transactionPrice.text = it
+        }
         viewHolder.transactionStatus.text = dataSet[position].status
     }
 
