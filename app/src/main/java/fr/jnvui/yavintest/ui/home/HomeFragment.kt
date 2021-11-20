@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import fr.jnvui.yavintest.R
 import fr.jnvui.yavintest.ui.adapters.AdapterClickListener
 import fr.jnvui.yavintest.ui.adapters.TicketAdapter
+import fr.jnvui.yavintest.ui.cart.CartActivity
 import fr.jnvui.yavintest.ui.payment.PaymentActivity
 import fr.jnvui.yavintest.ui.payment.PaymentFragment.Companion.TICKET_ID_INTENT_EXTRA
 import fr.jnvui.yavintest.usecases.TicketUseCase
@@ -55,7 +56,7 @@ class HomeFragment : Fragment() {
 
         cartIcon.setOnClickListener {
             //Start activity
-            val intent = Intent(this.context, PaymentActivity::class.java)
+            val intent = Intent(this.context, CartActivity::class.java)
             intent.putExtra(TICKET_ID_INTENT_EXTRA, it.id)
             startActivity(intent)
         }

@@ -38,7 +38,7 @@ class TicketAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         viewHolder.ticketType.text = dataSet[position].ticketType
-        viewHolder.ticketPrice.text = dataSet[position].ticketPrice
+        (dataSet[position].ticketPrice + "€").also { viewHolder.ticketPrice.text = it }
         viewHolder.ticketPriceItem.setOnClickListener {
             onClickListener.onClick(dataSet[position])
         }
