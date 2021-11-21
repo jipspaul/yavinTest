@@ -22,11 +22,13 @@ class TicketAdapter(
         val ticketPrice: TextView
         val deleteButton: ImageView
         val ticketPriceItem: ConstraintLayout
+        val dayTicketCounterTextView: TextView
 
         init {
             ticketType = view.findViewById(R.id.ticketTypeTextView)
             ticketPrice = view.findViewById(R.id.dayTicketPriceTextView)
             ticketPriceItem = view.findViewById(R.id.ticketPriceItem)
+            dayTicketCounterTextView = view.findViewById(R.id.dayTicketCounterTextView)
             deleteButton = view.findViewById(R.id.removeItemButton)
         }
     }
@@ -44,11 +46,16 @@ class TicketAdapter(
 
         if (dataSet[position].ticketCartCounter > 0) {
             viewHolder.deleteButton.visibility = View.VISIBLE
-            (dataSet[position].ticketPrice + "€ x" + dataSet[position].ticketCartCounter).also {
+            viewHolder.dayTicketCounterTextView.visibility = View.VISIBLE
+            ("x" + dataSet[position].ticketCartCounter).also {
+                viewHolder.dayTicketCounterTextView.text = it
+            }
+            (dataSet[position].ticketPrice + "€ ").also {
                 viewHolder.ticketPrice.text = it
             }
         } else {
             viewHolder.deleteButton.visibility = View.INVISIBLE
+            viewHolder.dayTicketCounterTextView.visibility = View.INVISIBLE
             (dataSet[position].ticketPrice + "€").also { viewHolder.ticketPrice.text = it }
         }
 

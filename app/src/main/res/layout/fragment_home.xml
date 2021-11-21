@@ -107,6 +107,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tittle" />
 
+    <TextView
+        android:id="@+id/explanationPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/explanation_pay"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/explanationText"
+        app:drawableRightCompat="@drawable/ic_shopping_cart_24dp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ticketsRecyclerView"
         android:layout_width="match_parent"
@@ -114,7 +127,7 @@
         android:layout_margin="@dimen/card_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/explanationText" />
+        app:layout_constraintTop_toBottomOf="@id/explanationPay" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
