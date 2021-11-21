@@ -6,4 +6,5 @@
     <string name="select_your_ticket">Select your ticket</string>
     <string name="edit">MODIFIER</string>
     <string name="pay">ACHETER</string>
+    <string name="select_your_ticket_body">You can select multiple tickets by clicking on it.</string>
 </resources>
