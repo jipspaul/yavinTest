@@ -26,7 +26,7 @@ class HomeViewModel(private val ticketUseCase: TicketUseCase) :
 
     fun updateTicket(ticket: Ticket) {
         _ticketsCart.value = cartList
-        ticket.ticketCartCounter = 4
+        ticket.ticketCartCounter = ticket.ticketCartCounter + 1
         doAsync {
             ticketUseCase.updateTicketPrice(ticket)
         }
@@ -35,7 +35,7 @@ class HomeViewModel(private val ticketUseCase: TicketUseCase) :
     fun removeTicketFromCart(ticket: Ticket) {
         cartList.removeLast() //TODO utils
         _ticketsCart.value = cartList
-        ticket.ticketCartCounter = 0
+        ticket.ticketCartCounter = ticket.ticketCartCounter - 1
         doAsync {
             ticketUseCase.updateTicketPrice(ticket)
         }
