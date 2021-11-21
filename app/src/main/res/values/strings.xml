@@ -8,4 +8,7 @@
     <string name="pay">ACHETER</string>
     <string name="select_your_ticket_body">You can select multiple tickets by clicking on it.</string>
     <string name="explanation_pay">To pay click on:</string>
+    <string name="date">"select date "</string>
+    <string name="modification_explanation">Modified le price and click button to valide the modification. You can on modify one by one.</string>
+    <string name="history_explanation">Click on button to select range of date</string>
 </resources>

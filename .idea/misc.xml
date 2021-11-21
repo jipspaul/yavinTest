@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/drawable/rounded_button.xml" value="0.18055555555555555" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1453125" />
         <entry key="app/src/main/res/drawable/rounded_textview.xml" value="0.1453125" />
+        <entry key="app/src/main/res/drawable/text_button_border.xml" value="0.18055555555555555" />
         <entry key="app/src/main/res/drawable/white_circle.xml" value="0.12447916666666667" />
         <entry key="app/src/main/res/font/lobster.xml" value="0.13854166666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1381340579710145" />

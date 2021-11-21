@@ -60,6 +60,72 @@ class TransactionsUseCase() {
                 "DEBIT",
                 "DEBIT",
                 "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                50,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                1000,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                50,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                1000,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                50,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                1000,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
             )
         )
     }

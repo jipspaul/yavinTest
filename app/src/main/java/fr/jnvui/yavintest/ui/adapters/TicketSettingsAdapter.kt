@@ -20,7 +20,7 @@ class TicketSettingsAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val ticketType: TextView
         val ticketPrice: EditText
-        val editPrice: Button
+        val editPrice: TextView
 
         init {
             ticketType = view.findViewById(R.id.ticketTypeTextView)

@@ -8,4 +8,6 @@
     <string name="pay">ACHETER</string>
     <string name="select_your_ticket_body">Vous pouvez ajouter des tickets a votre panier en cliquant dessus.</string>
     <string name="explanation_pay">Pour payer appuyer sur:</string>
+    <string name="modification_explanation">Modified le price and click button to valide the modification. You can on modify one by one.</string>
+    <string name="history_explanation">Click on button to select range of date</string>
 </resources>
