@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import fr.jnvui.yavintest.models.Ticket
 import fr.jnvui.yavintest.usecases.TicketUseCase
+import fr.jnvui.yavintest.utils.TicketsUtils
 import org.jetbrains.anko.doAsync
 
 class HomeViewModel(private val ticketUseCase: TicketUseCase) :
@@ -14,27 +15,21 @@ class HomeViewModel(private val ticketUseCase: TicketUseCase) :
     private var _tickets = ticketUseCase.getTickets()
     val tickets: LiveData<List<Ticket>> = _tickets
 
-    private val _ticketsCart = MutableLiveData<List<Ticket>>()
-    val ticketsCart: LiveData<List<Ticket>> = _ticketsCart
-
-    private val cartList : ArrayList<Ticket> = arrayListOf()
-
-    fun addTicketToCart(ticket: Ticket) {
-        cartList.add(ticket)
-        _ticketsCart.value = cartList
-    }
+    private val _ticketsCart = MutableLiveData<Int>()
+    val ticketsCart: LiveData<Int> = _ticketsCart
 
     fun updateTicket(ticket: Ticket) {
-        _ticketsCart.value = cartList
         ticket.ticketCartCounter = ticket.ticketCartCounter + 1
         doAsync {
             ticketUseCase.updateTicketPrice(ticket)
         }
     }
 
+    fun updateCart(tickets: List<Ticket>) {
+        _ticketsCart.value = TicketsUtils.getNumberOfTicketFromList(tickets)
+    }
+
     fun removeTicketFromCart(ticket: Ticket) {
-        cartList.removeLast() //TODO utils
-        _ticketsCart.value = cartList
         ticket.ticketCartCounter = ticket.ticketCartCounter - 1
         doAsync {
             ticketUseCase.updateTicketPrice(ticket)

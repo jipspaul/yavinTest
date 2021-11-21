@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import fr.jnvui.yavintest.R
 import fr.jnvui.yavintest.ui.adapters.AdapterClickListener
 import fr.jnvui.yavintest.ui.adapters.TicketAdapter
-import fr.jnvui.yavintest.ui.cart.CartActivity
 import fr.jnvui.yavintest.ui.payment.PaymentActivity
 import fr.jnvui.yavintest.ui.payment.PaymentFragment.Companion.TICKET_ID_INTENT_EXTRA
 import fr.jnvui.yavintest.usecases.TicketUseCase
@@ -43,17 +42,19 @@ class HomeFragment : Fragment() {
                 it.toTypedArray(),
                 AdapterClickListener(
                     {
-                        homeViewModel.addTicketToCart(it)
                         homeViewModel.updateTicket(it)
                     },
                     {
                         homeViewModel.removeTicketFromCart(it)
                     })
             )
+            //update cart counter
+            homeViewModel.updateCart(it)
+
         })
 
         homeViewModel.ticketsCart.observe(viewLifecycleOwner, Observer {
-            cartCountTextView.text = it.size.toString()
+            cartCountTextView.text = it.toString()
         })
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
