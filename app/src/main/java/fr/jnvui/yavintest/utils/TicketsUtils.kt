@@ -18,7 +18,11 @@ class TicketsUtils {
             for (t in tickets) {
                 total += (t.ticketPrice.toDouble() * t.ticketCartCounter.toDouble())
             }
-            return "%.2f".format(total).toDouble()
+            return total
+        }
+
+        fun formatPrice(price: Double): String{
+            return "%.2f".format(price).toDouble().toString()
         }
 
     }

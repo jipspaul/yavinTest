@@ -10,7 +10,7 @@ import fr.jnvui.yavintest.usecases.TransactionsUseCase
 class HistoryViewModel(private val transactionsUseCase: TransactionsUseCase) : ViewModel() {
 
     private val _intervalDate = MutableLiveData<String>().apply {
-        value = "24 nov.-28nov."
+        value = "2020-01-15 - 2020-01-15"
     }
     val intervalDate: LiveData<String> = _intervalDate
 

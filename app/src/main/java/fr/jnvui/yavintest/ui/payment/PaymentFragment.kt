@@ -21,7 +21,7 @@ import org.koin.android.ext.android.inject
 class PaymentFragment : Fragment() {
 
     companion object {
-        val TICKET_ID_INTENT_EXTRA = "TICKET_ID_INTENT_EXTRA"
+        val TOTAL_PRICE_INTENT_EXTRA = "TICKET_ID_INTENT_EXTRA"
         fun newInstance() = PaymentFragment()
     }
 
@@ -43,12 +43,12 @@ class PaymentFragment : Fragment() {
                 PaymentViewModelFactory(ticketUseCase)
             ).get(PaymentViewModel::class.java)
 
-        activity?.intent?.extras?.getString(TICKET_ID_INTENT_EXTRA)?.let { it ->
+        activity?.intent?.extras?.getString(TOTAL_PRICE_INTENT_EXTRA)?.let { it ->
             initViewModel(it)
         }
 
         payButton.setOnClickListener {
-            viewModel.getTicketById(viewModel.ticketId).observe(this.requireActivity(),
+            viewModel.getTicketById(viewModel.price).observe(this.requireActivity(),
                 { ticket ->
                     startPaymentOnYavinPay(ticket)
                 }
@@ -58,18 +58,13 @@ class PaymentFragment : Fragment() {
 
     }
 
-    fun initViewModel(id: String) {
-        viewModel.ticketId = id
-        viewModel.getTicketById(id).observe(this.requireActivity(),
-            { ticket ->
-                showTicketInformation(ticket)
-            }
-        )
+    fun initViewModel(price: String) {
+        viewModel.price = price
+        showPriceInformation(price)
     }
 
-    fun showTicketInformation(ticket: Ticket) {
-        ticketTypeTextView.text = ticket.ticketType
-        ticketPriceTextView.text = ticket.ticketPrice
+    fun showPriceInformation(price: String) {
+        ticketPriceTextView.text = price
     }
 
     private fun startPaymentOnYavinPay(ticket: Ticket) {

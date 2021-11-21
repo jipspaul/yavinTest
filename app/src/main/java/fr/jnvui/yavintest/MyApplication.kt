@@ -29,9 +29,9 @@ class MyApplication : Application() {
         val dao: TicketsDAO by inject()
         //TODO create db file
         doAsync {
-            dao.insertAll(Ticket("1", "Single Journey ticket", "1,60£",0))
-            dao.insertAll(Ticket("2", "One day ticket", "12,40£",0))
-            dao.insertAll(Ticket("3", "One week ticket", "47,90£",0))
+            dao.insertAll(Ticket("1", "Single Journey ticket", "1.60",1))
+            dao.insertAll(Ticket("2", "One day ticket", "12.40",0))
+            dao.insertAll(Ticket("3", "One week ticket", "47.90",0))
         }
     }
 

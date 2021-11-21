@@ -13,7 +13,7 @@ import fr.jnvui.yavintest.R
 import fr.jnvui.yavintest.ui.adapters.AdapterClickListener
 import fr.jnvui.yavintest.ui.adapters.TicketAdapter
 import fr.jnvui.yavintest.ui.payment.PaymentActivity
-import fr.jnvui.yavintest.ui.payment.PaymentFragment.Companion.TICKET_ID_INTENT_EXTRA
+import fr.jnvui.yavintest.ui.payment.PaymentFragment.Companion.TOTAL_PRICE_INTENT_EXTRA
 import fr.jnvui.yavintest.usecases.TicketUseCase
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.inject
@@ -63,10 +63,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         cartIcon.setOnClickListener {
-            //Start activity
-            val intent = Intent(this.context, PaymentActivity::class.java)
-            intent.putExtra(TICKET_ID_INTENT_EXTRA, "1")
-            startActivity(intent)
+            homeViewModel.ticketsCart.observe(viewLifecycleOwner, Observer {
+                val intent = Intent(this.context, PaymentActivity::class.java)
+                intent.putExtra(TOTAL_PRICE_INTENT_EXTRA, it.toString())
+                startActivity(intent)
+            })
         }
     }
 }

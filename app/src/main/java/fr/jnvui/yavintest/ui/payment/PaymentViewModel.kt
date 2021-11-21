@@ -9,7 +9,7 @@ import fr.jnvui.yavintest.usecases.TicketUseCase
 
 class PaymentViewModel(private val ticketUseCase: TicketUseCase) : ViewModel() {
 
-    lateinit var ticketId : String
+    lateinit var price : String
 
     fun getTicketById(id: String): LiveData<Ticket> {
         return ticketUseCase.getTicketById(id)
