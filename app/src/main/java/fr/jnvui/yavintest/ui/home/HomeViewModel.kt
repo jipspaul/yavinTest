@@ -15,8 +15,8 @@ class HomeViewModel(private val ticketUseCase: TicketUseCase) :
     private var _tickets = ticketUseCase.getTickets()
     val tickets: LiveData<List<Ticket>> = _tickets
 
-    private val _ticketsCart = MutableLiveData<Int>()
-    val ticketsCart: LiveData<Int> = _ticketsCart
+    private val _ticketsCart = MutableLiveData<Double>()
+    val ticketsCart: LiveData<Double> = _ticketsCart
 
     fun updateTicket(ticket: Ticket) {
         ticket.ticketCartCounter = ticket.ticketCartCounter + 1
@@ -26,7 +26,7 @@ class HomeViewModel(private val ticketUseCase: TicketUseCase) :
     }
 
     fun updateCart(tickets: List<Ticket>) {
-        _ticketsCart.value = TicketsUtils.getNumberOfTicketFromList(tickets)
+        _ticketsCart.value = TicketsUtils.getPriceFromTicketList(tickets)
     }
 
     fun removeTicketFromCart(ticket: Ticket) {

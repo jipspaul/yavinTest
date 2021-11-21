@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
         })
 
         homeViewModel.ticketsCart.observe(viewLifecycleOwner, Observer {
-            cartCountTextView.text = it.toString()
+            (it.toString() + "€").also { cartCountTextView.text = it }
         })
         return inflater.inflate(R.layout.fragment_home, container, false)
     }

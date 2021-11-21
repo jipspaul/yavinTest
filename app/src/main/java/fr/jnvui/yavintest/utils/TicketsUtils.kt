@@ -13,5 +13,13 @@ class TicketsUtils {
             return numberOfTickets
         }
 
+        fun getPriceFromTicketList(tickets: List<Ticket>): Double {
+            var total = 0.0
+            for (t in tickets) {
+                total += (t.ticketPrice.toDouble() * t.ticketCartCounter.toDouble())
+            }
+            return "%.2f".format(total).toDouble()
+        }
+
     }
 }
