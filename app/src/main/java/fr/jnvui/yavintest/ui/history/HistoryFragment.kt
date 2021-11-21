@@ -77,7 +77,7 @@ class HistoryFragment : Fragment() {
                 val dayStr = if (dayofMonth < 10) "0${dayofMonth}" else "${dayofMonth}"
                 val mon = month + 1
                 val monthStr = if (mon < 10) "0${mon}" else "${mon}"
-                firstDate = "${dayStr}-${monthStr}-${year}"
+                firstDate = "${dayStr}/${monthStr}/${year}"
 
                 //Set min date to first date select
                 val minDate = Calendar.getInstance()
@@ -93,7 +93,7 @@ class HistoryFragment : Fragment() {
                         val mon = month + 1
                         val monthStr = if (mon < 10) "0${mon}" else "${mon}"
 
-                        secondDate = "${dayStr}-${monthStr}-${year}"
+                        secondDate = "${dayStr}/${monthStr}/${year}"
 
                         historyViewModel.changeIntervaleDate(firstDate + " - " + secondDate)
 
