@@ -18,8 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-            <!-- ToolBar widget -->
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
@@ -46,12 +44,12 @@
         android:id="@+id/tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="@dimen/history_title_margin"
         android:fontFamily="@font/lobster_regular"
         android:text="@string/title_history"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="@dimen/history_textsize_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
@@ -63,7 +61,7 @@
         android:text="@string/history_explanation"
         android:textAlignment="center"
         android:textColor="@android:color/darker_gray"
-        android:textSize="15sp"
+        android:textSize="@dimen/explanation_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tittle" />
@@ -76,11 +74,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/rounded_textview"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
+        android:paddingStart="@dimen/date_selector_padding"
+        android:paddingEnd="@dimen/date_selector_padding"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="@dimen/date_selector_textsize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/explanationText" />
@@ -90,7 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/card_margin"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/history_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dateSelectorTextview" />
@@ -100,10 +98,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/card_margin"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/history_margin"
         android:text="@string/no_transaction"
         android:textAlignment="center"
-        android:textSize="30dp"
+        android:textSize="@dimen/no_transaction_size"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
