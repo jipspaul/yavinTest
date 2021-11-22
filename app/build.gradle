@@ -78,6 +78,7 @@ dependencies {
     implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
     implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
     implementation "io.insert-koin:koin-androidx-compose:$koin_version"
+    testImplementation "org.koin:koin-test:0.9.3"
 
     //anko
     implementation 'org.jetbrains.anko:anko-common:0.9'

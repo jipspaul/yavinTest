@@ -2,7 +2,6 @@ package fr.jnvui.yavintest
 
 import fr.jnvui.yavintest.models.Ticket
 import fr.jnvui.yavintest.models.Transaction
-import fr.jnvui.yavintest.utils.TicketsUtils.Companion.formatPrice
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
