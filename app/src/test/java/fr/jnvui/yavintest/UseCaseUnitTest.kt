@@ -33,16 +33,16 @@ class UseCaseUnitTest {
             Ticket("", "", "1", 1),
             Ticket("", "", "1", 1),
             Ticket("", "", "1", 30),
-            )
+        )
         assertEquals(getPriceFromTicketList(ticketsListEqual33), 33.0, 0.001)
 
     }
 
     @Test
-    fun testStringFormatter(){
+    fun testStringFormatter() {
 
-        assertEquals(formatPrice(0.0),"0.00")
-        assertEquals(formatPrice(12.2222),"12.22")
+        assertEquals(formatPrice(0.0), "0.00")
+        assertEquals(formatPrice(12.2222), "12.22")
 
     }
 
