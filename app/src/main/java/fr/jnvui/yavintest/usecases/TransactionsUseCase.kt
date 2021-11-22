@@ -6,6 +6,7 @@ import java.util.*
 class TransactionsUseCase() {
 
     fun getTransactions(startDate: Date, endDate: Date): List<Transaction> {
+        return emptyList()
         return listOf(
             Transaction(
                 "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",

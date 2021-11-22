@@ -10,4 +10,6 @@
     <string name="explanation_pay">Pour payer appuyer sur:</string>
     <string name="modification_explanation">Modified le price and click button to valide the modification. You can on modify one by one.</string>
     <string name="history_explanation">Click on button to select range of date</string>
+    <string name="no_transaction">There is no transaction yet</string>
+    <string name="payment_error">Paiment Error</string>
 </resources>

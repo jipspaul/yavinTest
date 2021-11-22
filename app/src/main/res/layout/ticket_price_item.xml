@@ -79,7 +79,7 @@
             app:autoSizeTextType="uniform"
             android:maxLines="1"
             android:textSize="25sp"
-            android:textColor="@color/black"
+            android:textColor="@android:color/darker_gray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/removeItemButton"
             app:layout_constraintTop_toTopOf="parent" />

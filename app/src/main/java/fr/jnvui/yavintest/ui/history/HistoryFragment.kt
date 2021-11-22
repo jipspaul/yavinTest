@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.jnvui.yavintest.R
+import fr.jnvui.yavintest.models.Transaction
 import fr.jnvui.yavintest.ui.adapters.TransactionsAdapter
 import fr.jnvui.yavintest.ui.helpers.DatePickerHelper
 import fr.jnvui.yavintest.usecases.TransactionsUseCase
@@ -52,15 +53,26 @@ class HistoryFragment : Fragment() {
         }
 
         historyViewModel.transactions.observe(viewLifecycleOwner, Observer {
-            val llm = LinearLayoutManager(this.requireContext())
-            llm.orientation = LinearLayoutManager.VERTICAL
-            historyRecyclerView.layoutManager = llm
-            historyRecyclerView.adapter = TransactionsAdapter(
-                it.toTypedArray()
-            )
+            if (it.isNotEmpty()) {
+                showTransactions(it.toTypedArray())
+            } else {
+                showNoTransactions()
+            }
         })
 
         return root
+    }
+
+    private fun showTransactions(transactions: Array<Transaction>) {
+        val llm = LinearLayoutManager(this.requireContext())
+        llm.orientation = LinearLayoutManager.VERTICAL
+        historyRecyclerView.layoutManager = llm
+        historyRecyclerView.adapter = TransactionsAdapter(
+            transactions
+        )
+    }
+
+    private fun showNoTransactions() {
     }
 
     private fun selectIntervalDate() {
