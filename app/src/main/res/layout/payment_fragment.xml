@@ -84,9 +84,11 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="20dp"
+        android:textColor="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/purple_circle" />
+        app:layout_constraintTop_toBottomOf="@+id/purple_circle"
+        app:layout_constraintBottom_toTopOf="@id/payButton"/>
 
     <Button
         android:id="@+id/payButton"

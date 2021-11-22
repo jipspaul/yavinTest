@@ -111,6 +111,7 @@ class PaymentFragment : Fragment() {
                 Log.d("signatureRequired", bundle["signatureRequired"].toString())
                 Log.d("transactionId", bundle["transactionId"].toString())
                 showPaymentStatus(PaymentStatus.SUCCESS)
+                activity?.finish()
             }
 
             showPaymentStatus(PaymentStatus.ERROR)
