@@ -2,16 +2,16 @@
     <string name="app_name">YavinTest</string>
     <string name="title_home">Acceuil</string>
     <string name="title_history">Historique</string>
-    <string name="title_settings">Reglage</string>
+    <string name="title_settings">Réglage</string>
     <string name="select_your_ticket">Choisissez vos tickets</string>
     <string name="edit">MODIFIER</string>
     <string name="pay">ACHETER</string>
-    <string name="date">"select date "</string>
-    <string name="select_your_ticket_body">Vous pouvez ajouter des tickets a votre panier en cliquant dessus.</string>
+    <string name="date">"Selectionner une date"</string>
+    <string name="select_your_ticket_body">Vous pouvez ajouter des tickets à votre panier en cliquant dessus.</string>
     <string name="explanation_pay">Pour payer appuyer sur:</string>
-    <string name="modification_explanation">Modified le price and click button to valide the modification. You can on modify one by one.</string>
-    <string name="history_explanation">Click on button to select range of date</string>
-    <string name="no_transaction">There is no transaction yet</string>
-    <string name="payment_error">Paiment Error</string>
-    <string name="cancel">Cancel</string>
+    <string name="modification_explanation">Modifier le prix et appuyer sur le bouton pour valider. Vous ne pouvez modifer que un élement à la fois.</string>
+    <string name="history_explanation">Cliquer sur le bouton pour sélectionner vos dates </string>
+    <string name="no_transaction">Aucune transaction </string>
+    <string name="payment_error">Erreur de paiement</string>
+    <string name="cancel">Annuler</string>
 </resources>
