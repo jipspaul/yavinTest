@@ -37,8 +37,9 @@ class SettingsFragment : Fragment() {
             val llm = LinearLayoutManager(this.requireContext())
             llm.orientation = LinearLayoutManager.VERTICAL
             ticketsSettingsRecyclerView.layoutManager = llm
-            ticketsSettingsRecyclerView.adapter = TicketSettingsAdapter(it.toTypedArray(),
-                AdapterClickListener ({
+            ticketsSettingsRecyclerView.adapter = TicketSettingsAdapter(
+                it.toTypedArray(),
+                AdapterClickListener({
                     settingsViewModel.updateTicketPrice(it)
                     //close keyboard
                     closeKeyboard(this.requireActivity())

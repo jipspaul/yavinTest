@@ -12,7 +12,7 @@ class SettingsViewModel(private val ticketUseCase: TicketUseCase) : ViewModel() 
     private val _tickets = ticketUseCase.getTickets()
     val tickets: LiveData<List<Ticket>> = _tickets
 
-    fun updateTicketPrice(ticket: Ticket){
+    fun updateTicketPrice(ticket: Ticket) {
         doAsync {
             ticketUseCase.updateTicketPrice(ticket)
         }

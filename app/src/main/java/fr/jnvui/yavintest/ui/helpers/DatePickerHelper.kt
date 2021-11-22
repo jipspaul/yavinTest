@@ -20,8 +20,10 @@ class DatePickerHelper(context: Context, isSpinnerType: Boolean = false) {
 
         val cal = Calendar.getInstance()
 
-        dialog = DatePickerDialog(context, style, listener,
-            cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH))
+        dialog = DatePickerDialog(
+            context, style, listener,
+            cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)
+        )
     }
 
     fun showDialog(dayofMonth: Int, month: Int, year: Int, callback: Callback?) {

@@ -1,7 +1,7 @@
 package fr.jnvui.yavintest.ui.cart
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import fr.jnvui.yavintest.R
 
 class CartActivity : AppCompatActivity() {

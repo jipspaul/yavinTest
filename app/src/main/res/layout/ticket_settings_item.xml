@@ -38,13 +38,13 @@
 
     <Button
         android:id="@+id/editButton"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/edit"
-        style="?android:attr/borderlessButtonStyle"
+        android:layout_margin="10dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:layout_margin="10dp"
+        android:text="@string/edit"
         android:textColor="@color/purple_700"
         android:textSize="@dimen/edit_button_text_size"
         app:cornerRadius="@dimen/button_corner_radius"

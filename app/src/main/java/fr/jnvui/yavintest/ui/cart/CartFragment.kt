@@ -1,11 +1,11 @@
 package fr.jnvui.yavintest.ui.cart
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import fr.jnvui.yavintest.R
 
 class CartFragment : Fragment() {

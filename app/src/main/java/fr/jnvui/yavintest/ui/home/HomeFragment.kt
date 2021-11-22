@@ -17,7 +17,6 @@ import fr.jnvui.yavintest.ui.payment.PaymentFragment.Companion.TOTAL_PRICE_INTEN
 import fr.jnvui.yavintest.usecases.TicketUseCase
 import fr.jnvui.yavintest.utils.TicketsUtils.Companion.formatPrice
 import kotlinx.android.synthetic.main.fragment_home.*
-import okhttp3.internal.wait
 import org.koin.android.ext.android.inject
 
 class HomeFragment : Fragment() {

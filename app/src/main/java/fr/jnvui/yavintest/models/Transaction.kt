@@ -1,6 +1,6 @@
 package fr.jnvui.yavintest.models
 
-data class Transaction (
+data class Transaction(
     val transactionID: String,
     val date: String,
     val time: String,

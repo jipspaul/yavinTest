@@ -47,8 +47,8 @@
             android:id="@+id/ticketTypeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:text="Total "
+            android:textColor="@color/black"
             android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@id/ticketPriceTextView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,17 +64,17 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"  />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:text="Euro (EUR)"
+            android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ticketPriceTextView"  />
+            app:layout_constraintTop_toBottomOf="@id/ticketPriceTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -82,12 +82,11 @@
         android:id="@+id/paymentStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/purple_circle"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/purple_circle" />
 
     <Button
         android:id="@+id/payButton"
@@ -105,10 +104,10 @@
 
     <Button
         android:id="@+id/payReturn"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/cancel"
-        style="?android:attr/borderlessButtonStyle"
         android:textColor="@color/black"
         android:textSize="@dimen/edit_button_text_size"
         app:cornerRadius="@dimen/button_corner_radius"

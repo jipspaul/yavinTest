@@ -2,14 +2,9 @@ package fr.jnvui.yavintest.usecases
 
 import fr.jnvui.yavintest.models.Transaction
 import fr.jnvui.yavintest.network.RequestTransactionBody
-import fr.jnvui.yavintest.network.RetrofitHelper
-import fr.jnvui.yavintest.network.TransactionsAPI
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
-import java.lang.StringBuilder
 import java.net.HttpURLConnection
 import java.net.URL
 import java.nio.charset.StandardCharsets

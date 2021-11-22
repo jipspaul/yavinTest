@@ -1,7 +1,7 @@
 package fr.jnvui.yavintest.ui.payment
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import fr.jnvui.yavintest.R
 
 class PaymentActivity : AppCompatActivity() {
