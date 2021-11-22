@@ -73,5 +73,4 @@ class HomeFragment : Fragment() {
         intent.putExtra(TOTAL_PRICE_INTENT_EXTRA, homeViewModel.totalPrice.toString())
         startActivity(intent)
     }
-
 }
