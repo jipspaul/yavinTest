@@ -22,10 +22,23 @@ android {
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
+    sourceSets {
+        main {
+            res.srcDirs += [
+                    'build/generated/res/custom',
+            ]
+        }
+    }
+
     buildTypes {
+        debug {
+            resValue "string", "yavin_token", "1s4DMHdqcZg1CnovHt1EYaNkuFe5TeeLV1YehyXLMj1aq2e8kI"
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "yavin_token", "1s4DMHdqcZg1CnovHt1EYaNkuFe5TeeLV1YehyXLMj1aq2e8kI"
         }
     }
     compileOptions {
@@ -66,5 +79,11 @@ dependencies {
 
     //anko
     implementation 'org.jetbrains.anko:anko-common:0.9'
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.0'
+
 
 }

@@ -6,6 +6,7 @@
     <string name="select_your_ticket">Choisissez vos tickets</string>
     <string name="edit">MODIFIER</string>
     <string name="pay">ACHETER</string>
+    <string name="date">"select date "</string>
     <string name="select_your_ticket_body">Vous pouvez ajouter des tickets a votre panier en cliquant dessus.</string>
     <string name="explanation_pay">Pour payer appuyer sur:</string>
     <string name="modification_explanation">Modified le price and click button to valide the modification. You can on modify one by one.</string>
