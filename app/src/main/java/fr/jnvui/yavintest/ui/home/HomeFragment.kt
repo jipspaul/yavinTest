@@ -70,7 +70,7 @@ class HomeFragment : Fragment() {
 
     fun showPaymentActivity() {
         val intent = Intent(this.context, PaymentActivity::class.java)
-        intent.putExtra(TOTAL_PRICE_INTENT_EXTRA, homeViewModel.totalPrice.toString())
+        intent.putExtra(TOTAL_PRICE_INTENT_EXTRA, formatPrice(homeViewModel.totalPrice))
         startActivity(intent)
     }
 }
