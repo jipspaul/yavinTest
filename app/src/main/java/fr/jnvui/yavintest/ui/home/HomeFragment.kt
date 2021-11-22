@@ -16,6 +16,7 @@ import fr.jnvui.yavintest.ui.payment.PaymentActivity
 import fr.jnvui.yavintest.ui.payment.PaymentFragment.Companion.TOTAL_PRICE_INTENT_EXTRA
 import fr.jnvui.yavintest.usecases.TicketUseCase
 import kotlinx.android.synthetic.main.fragment_home.*
+import okhttp3.internal.wait
 import org.koin.android.ext.android.inject
 
 class HomeFragment : Fragment() {
@@ -56,18 +57,21 @@ class HomeFragment : Fragment() {
         homeViewModel.ticketsCart.observe(viewLifecycleOwner, Observer {
             (it.toString() + "€").also { cartCountTextView.text = it }
         })
+
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         cartIcon.setOnClickListener {
-            homeViewModel.ticketsCart.observe(viewLifecycleOwner, Observer {
-                val intent = Intent(this.context, PaymentActivity::class.java)
-                intent.putExtra(TOTAL_PRICE_INTENT_EXTRA, it.toString())
-                startActivity(intent)
-            })
+            showPaymentActivity()
         }
     }
+
+    fun showPaymentActivity() {
+        val intent = Intent(this.context, PaymentActivity::class.java)
+        intent.putExtra(TOTAL_PRICE_INTENT_EXTRA, homeViewModel.totalPrice.toString())
+        startActivity(intent)
+    }
+
 }
