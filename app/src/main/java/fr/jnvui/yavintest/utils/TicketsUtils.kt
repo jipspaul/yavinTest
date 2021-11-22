@@ -14,7 +14,7 @@ class TicketsUtils {
         }
 
         fun formatPrice(price: Double): String {
-            return String.format("%.2f", price)
+            return String.format("%.2f", price).replace(',', '.')
         }
 
     }
