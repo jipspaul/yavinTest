@@ -1,16 +1,15 @@
 package fr.jnvui.yavintest.usecases
 
-import com.google.gson.Gson
 import fr.jnvui.yavintest.models.Transaction
 import fr.jnvui.yavintest.network.RequestTransactionBody
 import fr.jnvui.yavintest.network.RetrofitHelper
 import fr.jnvui.yavintest.network.TransactionsAPI
-import fr.jnvui.yavintest.network.TransactionsResponse
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
+import java.lang.StringBuilder
 import java.net.HttpURLConnection
 import java.net.URL
 import java.nio.charset.StandardCharsets
@@ -21,25 +20,132 @@ class TransactionsUseCase(val requestTransactionBody: RequestTransactionBody) {
 
     fun getTransactions(startDate: Date, endDate: Date): List<Transaction> {
 
-        val transactionApi = RetrofitHelper.getInstance().create(TransactionsAPI::class.java)
-        // launching a new coroutine
-        GlobalScope.launch {
-
-            val result =
-                transactionApi.getTransactions(requestTransactionBody)
-
-            var string =
-                requestTrqnsactions("{\"yavin_secret\":\"1s4DMHdqcZg1CnovHt1EYaNkuFe5TeeLV1YehyXLMj1aq2e8kI\"}")
-            var transactionsResponse =
-                Gson().fromJson(string, TransactionsResponse::class.java)
-
-            string.length
-        }
-
-        return emptyList()
+        return listOf(
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                500,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                60,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                25,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                50,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                1000,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                50,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                1000,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                50,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                1000,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                50,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            ),
+            Transaction(
+                "b14fbe01-fd2a-419b-9f4d-6aea4edf514b",
+                "2020-01-15",
+                "11:19:31",
+                1000,
+                "EUR",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT",
+                "DEBIT"
+            )
+        )
     }
 
-    fun requestTrqnsactions(message: String): String {
+    fun requestTrqnsactions(message: String) {
 
         val serverURL: String = "https://api.sandbox.yavin.com/api/v1/transactions/"
         val url = URL(serverURL)
@@ -77,8 +183,6 @@ class TransactionsUseCase(val requestTransactionBody: RequestTransactionBody) {
         while (br.readLine().also { output = it } != null) {
             sb.append(output)
         }
-
-        return sb.toString()
     }
 
 }

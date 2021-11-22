@@ -99,8 +99,22 @@
         android:textSize="@dimen/edit_button_text_size"
         android:textStyle="bold"
         app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintBottom_toTopOf="@id/payReturn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/payReturn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/black"
+        android:textSize="@dimen/edit_button_text_size"
+        app:cornerRadius="@dimen/button_corner_radius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

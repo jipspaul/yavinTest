@@ -13,4 +13,5 @@
     <string name="history_explanation">Click on button to select range of date</string>
     <string name="no_transaction">There is no transaction yet</string>
     <string name="payment_error">Paiment Error</string>
+    <string name="cancel">Cancel</string>
 </resources>

@@ -53,7 +53,9 @@ class PaymentFragment : Fragment() {
                     startPaymentOnYavinPay()
                 }
             )
-
+        }
+        payReturn.setOnClickListener {
+            activity?.finish()
         }
 
     }
@@ -103,17 +105,15 @@ class PaymentFragment : Fragment() {
             ActivityResultContracts.StartActivityForResult()
         ) {
 
-            var paymentStatus: PaymentStatus = PaymentStatus.ERROR
-
             it?.data?.extras?.let { bundle ->
                 Log.d("clientTicket", bundle["clientTicket"].toString())
                 Log.d("status", bundle["status"].toString())
                 Log.d("signatureRequired", bundle["signatureRequired"].toString())
                 Log.d("transactionId", bundle["transactionId"].toString())
-                //TODO check payment
+                showPaymentStatus(PaymentStatus.SUCCESS)
             }
 
-            showPaymentStatus(paymentStatus)
+            showPaymentStatus(PaymentStatus.ERROR)
         }
 
 }
