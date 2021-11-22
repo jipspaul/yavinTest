@@ -15,6 +15,7 @@ import fr.jnvui.yavintest.ui.adapters.TicketAdapter
 import fr.jnvui.yavintest.ui.payment.PaymentActivity
 import fr.jnvui.yavintest.ui.payment.PaymentFragment.Companion.TOTAL_PRICE_INTENT_EXTRA
 import fr.jnvui.yavintest.usecases.TicketUseCase
+import fr.jnvui.yavintest.utils.TicketsUtils.Companion.formatPrice
 import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.internal.wait
 import org.koin.android.ext.android.inject
@@ -55,7 +56,7 @@ class HomeFragment : Fragment() {
         })
 
         homeViewModel.ticketsCart.observe(viewLifecycleOwner, Observer {
-            (it.toString() + "€").also { cartCountTextView.text = it }
+            (formatPrice(it) + "€").also { cartCountTextView.text = it }
         })
 
         return inflater.inflate(R.layout.fragment_home, container, false)

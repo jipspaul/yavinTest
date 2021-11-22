@@ -22,7 +22,7 @@ class TicketsUtils {
         }
 
         fun formatPrice(price: Double): String{
-            return "%.2f".format(price).toDouble().toString()
+            return String.format("%.2f", price)
         }
 
     }
