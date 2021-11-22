@@ -6,6 +6,9 @@ import android.content.Context
 import fr.jnvui.yavintest.R
 import java.util.*
 
+/**
+ * Class to manage date picker from code instead of xnl
+ */
 class DatePickerHelper(context: Context, isSpinnerType: Boolean = false) {
 
     private var dialog: DatePickerDialog

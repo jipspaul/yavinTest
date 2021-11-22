@@ -41,14 +41,9 @@ class SettingsFragment : Fragment() {
                 it.toTypedArray(),
                 AdapterClickListener({
                     settingsViewModel.updateTicketPrice(it)
-                    //close keyboard
+                    //close keyboard when update ticket price
                     closeKeyboard(this.requireActivity())
-                },
-                    {
-                        settingsViewModel.updateTicketPrice(it)
-                        //close keyboard
-                        closeKeyboard(this.requireActivity())
-                    })
+                }, {})
             )
         })
 

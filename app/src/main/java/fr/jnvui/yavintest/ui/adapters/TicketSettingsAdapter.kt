@@ -42,6 +42,7 @@ class TicketSettingsAdapter(
         viewHolder.ticketPrice.text =
             Editable.Factory.getInstance().newEditable(dataSet[position].ticketPrice)
         viewHolder.editPrice.setOnClickListener {
+            //get edittext value and use onclick to send it to viewmodel
             dataSet[position].ticketPrice = viewHolder.ticketPrice.text.toString()
             onClickListener.onClick(dataSet[position])
         }

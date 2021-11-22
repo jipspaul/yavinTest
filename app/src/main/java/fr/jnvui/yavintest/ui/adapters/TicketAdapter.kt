@@ -44,6 +44,7 @@ class TicketAdapter(
 
         viewHolder.ticketType.text = dataSet[position].ticketType
 
+        //Only show counter factor and remove button when ticketCartCounter is greater than zero
         if (dataSet[position].ticketCartCounter > 0) {
             viewHolder.deleteButton.visibility = View.VISIBLE
             viewHolder.dayTicketCounterTextView.visibility = View.VISIBLE

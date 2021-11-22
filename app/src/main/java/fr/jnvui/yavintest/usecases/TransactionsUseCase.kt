@@ -13,6 +13,9 @@ import java.util.*
 
 class TransactionsUseCase(val requestTransactionBody: RequestTransactionBody) {
 
+    /**
+     * Mock transaction since API sandbox not available yet
+     */
     fun getTransactions(startDate: Date, endDate: Date): List<Transaction> {
 
         return listOf(

@@ -20,13 +20,25 @@ import org.koin.android.ext.android.inject
 
 class PaymentFragment : Fragment() {
 
-    companion object {
-        val TOTAL_PRICE_INTENT_EXTRA = "TICKET_ID_INTENT_EXTRA"
-        fun newInstance() = PaymentFragment()
-    }
-
     private lateinit var viewModel: PaymentViewModel
     private val ticketUseCase: TicketUseCase by inject()
+
+
+    private val getPaymentResultFromYavinApp =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
+
+            it?.data?.extras?.let { bundle ->
+                Log.d("clientTicket", bundle["clientTicket"].toString())
+                Log.d("status", bundle["status"].toString())
+                Log.d("signatureRequired", bundle["signatureRequired"].toString())
+                Log.d("transactionId", bundle["transactionId"].toString())
+                showPaymentStatus(PaymentStatus.SUCCESS)
+                activity?.finish()
+            }
+            showPaymentStatus(PaymentStatus.ERROR)
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -100,20 +112,9 @@ class PaymentFragment : Fragment() {
 
     }
 
-    val getPaymentResultFromYavinApp =
-        registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ) {
-
-            it?.data?.extras?.let { bundle ->
-                Log.d("clientTicket", bundle["clientTicket"].toString())
-                Log.d("status", bundle["status"].toString())
-                Log.d("signatureRequired", bundle["signatureRequired"].toString())
-                Log.d("transactionId", bundle["transactionId"].toString())
-                showPaymentStatus(PaymentStatus.SUCCESS)
-                activity?.finish()
-            }
-            showPaymentStatus(PaymentStatus.ERROR)
-        }
+    companion object {
+        val TOTAL_PRICE_INTENT_EXTRA = "TICKET_ID_INTENT_EXTRA"
+        fun newInstance() = PaymentFragment()
+    }
 
 }

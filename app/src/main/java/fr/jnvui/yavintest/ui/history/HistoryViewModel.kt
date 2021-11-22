@@ -11,7 +11,7 @@ import java.util.*
 class HistoryViewModel(private val transactionsUseCase: TransactionsUseCase) : ViewModel() {
 
     private val _intervalDate = MutableLiveData<String>().apply {
-        value = "2020/01/15 - 2020/01/15"
+        value = "Click to select date"
     }
     val intervalDate: LiveData<String> = _intervalDate
 

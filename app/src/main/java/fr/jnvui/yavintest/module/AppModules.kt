@@ -13,7 +13,6 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val appModule = module {
-
     single { RequestTransactionBody(androidContext().resources.getString(R.string.yavin_token)) }
     single { TicketUseCase(get()) }
     single { TransactionsUseCase(get()) }

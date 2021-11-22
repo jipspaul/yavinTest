@@ -15,9 +15,6 @@
         android:theme="@style/Theme.YavinTest">
 
         <activity
-            android:name=".ui.cart.CartActivity"
-            android:exported="true" />
-        <activity
             android:name=".ui.payment.PaymentActivity"
             android:exported="true" />
         <activity

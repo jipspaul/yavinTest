@@ -75,6 +75,10 @@ class HistoryFragment : Fragment() {
     private fun showNoTransactions() {
     }
 
+    /**
+     * Function to intialise date and show a dialog to select first date
+     * and a second one for the second date
+     */
     private fun selectIntervalDate() {
 
         val cal = Calendar.getInstance()
