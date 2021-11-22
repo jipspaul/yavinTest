@@ -113,7 +113,6 @@ class PaymentFragment : Fragment() {
                 showPaymentStatus(PaymentStatus.SUCCESS)
                 activity?.finish()
             }
-
             showPaymentStatus(PaymentStatus.ERROR)
         }
 
