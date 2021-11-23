@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.payment_fragment.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.koin.android.ext.android.inject
+import org.koin.android.ext.koin.androidContext
 
 class PaymentFragment : Fragment() {
 
@@ -93,7 +94,7 @@ class PaymentFragment : Fragment() {
         val intent = Intent()
         intent.component =
             ComponentName("com.yavin.macewindu", "com.yavin.macewindu.PaymentActivity")
-        intent.putExtra("vendorToken", "342")
+        intent.putExtra("vendorToken", requireContext().resources.getString(R.string.yavin_token))
         intent.putExtra("amount", viewModel.price)
         intent.putExtra("currency", "EUR")
         intent.putExtra("transactionType", "Debit")
